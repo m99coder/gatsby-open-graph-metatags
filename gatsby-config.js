@@ -37,5 +37,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-purgecss`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-use-query-params`,
   ],
 }
