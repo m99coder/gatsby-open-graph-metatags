@@ -38,5 +38,28 @@ module.exports = {
     `gatsby-plugin-purgecss`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-use-query-params`,
+    {
+      resolve: `gatsby-plugin-local-search`,
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        query:
+          `{
+            allFile {
+              nodes {
+                relativePath
+                size
+                id
+              }
+            }
+          }`,
+        normalizer: ({ data }) =>
+          data.allFile.nodes.map((node) => ({
+            id: node.id,
+            path: node.relativePath,
+            size: node.size,
+          })),
+      }
+    },
   ],
 }
