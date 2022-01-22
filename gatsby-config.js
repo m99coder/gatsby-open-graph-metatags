@@ -62,5 +62,14 @@ module.exports = {
       }
     },
     `@sentry/gatsby`,
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
+        },
+        environments: [`production`],
+      },
+    },
   ],
 }
