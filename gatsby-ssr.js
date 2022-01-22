@@ -4,10 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-const React = require("react")
-const { default: Layout } = require("./src/components/layout")
+const { wrapPageElement } = require("./src/utils/wrap-page-element")
 
-// Wraps every page in a component
-exports.wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>
-}
+// Wraps every page
+exports.wrapPageElement = wrapPageElement
