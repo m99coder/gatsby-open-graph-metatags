@@ -6,4 +6,10 @@ exports.createPages = async ({ actions }) => {
     context: {},
     defer: true,
   })
+
+  createPage({
+    path: "/test",
+    component: require.resolve("./src/templates/test.js"),
+    context: {},
+  })
 }
